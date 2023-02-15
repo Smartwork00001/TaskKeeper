@@ -1,0 +1,92 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  position: relative;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+}
+
+.project-display{
+  display: flex;
+  flex-wrap: wrap;
+  gap:1rem;
+  padding: 1rem;
+}
+
+.project{
+  background-color: antiquewhite;
+  border-radius: 1rem;
+  padding: 1rem;
+  border-left-style: 2px solid #ccc;
+  width: 10%;
+  flex: auto;
+}
+
+.nav-bar{
+  padding:1rem;
+}
+
+.okButtonDiv {
+  position: fixed;
+  top: 20%;
+  left: 47%;
+  background-color: aliceblue;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  gap: 2rem;
+  border-radius: 1rem;
+}
+
+.add-project-form {
+  position: fixed;
+  top: 10%;
+  left: 15%;
+  background-color: aliceblue;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  gap: 2rem;
+  border-radius: 1rem;
+}
+
+.add-project,
+.create-project-button,
+.okButton,
+.add-task,
+.remove-task {
+  appearance: none;
+  background: #4338ca;
+  border: 0;
+  border-radius: 0.5rem;
+  color: #fff;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 500;
+  line-height: 1;
+  padding: 0.7em 1em;
+}
+
+input[type="text"] {
+  width: 100%;
+  border: 0;
+  border-bottom: 2px solid gray;
+  outline: 0;
+  font-size: 1.3rem;
+  color: black;
+  padding: 4px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+}
+
+.hidden {
+  display: none;
+}
