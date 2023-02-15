@@ -7,9 +7,11 @@ import removeProject from "./modules/ProjectRemoveProject";
 import updateProjectName from "./modules/ProjectUpdateProjectName";
 import updateProjectDesc from "./modules/ProjectUpdateProjectDesc";
 import ProjectLocalStorage from "./modules/ProjectLocalStorage";
+import readOneProject from "./modules/ProjectReadOneProject";
+import displayProjectsOnDom from "./modules/ProjectDisplayDOM";
 
 localStorage.clear();
 addProject("Default Project", "This is the default project");
 addProject("First Project", "This is the first project");
 
-removeProject('First Project');
+displayProjectsOnDom();

@@ -1,5 +1,6 @@
 import displayMessage from "./Messages";
 import Project from "./ProjectClass";
+import displayProjectsOnDom from "./ProjectDisplayDOM";
 import ProjectLocalStorage from "./ProjectLocalStorage";
 
 const addProject = (name, desc) => {
@@ -11,7 +12,7 @@ const addProject = (name, desc) => {
   projects.push(new Project(name, desc));
   ProjectLocalStorage.updateProject(projects);
   displayMessage(`Project ${name} created`);
-  console.log(localStorage.getItem('projects'));
+  displayProjectsOnDom();
 };
 
 export default addProject;

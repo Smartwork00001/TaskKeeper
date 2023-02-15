@@ -1,4 +1,5 @@
 import displayMessage from "./Messages";
+import displayProjectsOnDom from "./ProjectDisplayDOM";
 import ProjectLocalStorage from "./ProjectLocalStorage";
 
 const removeProject = (name) => {
@@ -13,7 +14,7 @@ const removeProject = (name) => {
 
   ProjectLocalStorage.updateProject(projects);
   displayMessage(`Project ${name} is removed!`);
-  console.log(localStorage.getItem("projects"));
+  displayProjectsOnDom();
 };
 
 export default removeProject;

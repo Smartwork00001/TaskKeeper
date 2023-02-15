@@ -1,4 +1,5 @@
 import displayMessage from "./Messages";
+import displayProjectsOnDom from "./ProjectDisplayDOM";
 
 const updateProjectName = (name, newName) => {
   const projects = JSON.parse(localStorage.getItem("projects"));
@@ -13,7 +14,7 @@ const updateProjectName = (name, newName) => {
   localStorage.removeItem("projects");
   localStorage.setItem("projects", JSON.stringify(projects));
   displayMessage(`Project ${name} is changed to ${newName}!`);
-  console.log(localStorage.getItem("projects"));
+  displayProjectsOnDom();
 };
 
 export default updateProjectName;

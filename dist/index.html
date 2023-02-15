@@ -1,33 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>STAY HARD!</title>
     <script src="main.js" defer></script>
-</head>
-<body>
+  </head>
+  <body>
     <div class="content">
-        <div class="okButtonDiv hidden">
-            <div class="okButtonText"></div>
-            <button class="okButton">OK</button>
-        </div>
-        <div class="nav-bar"><button class="add-project">Add Project</button></div>
-        <div class="add-project-form hidden" id="addProjectForm">
-            <form id="addProjectForm" action="" method="post">
-                <div class="project-name">
-                    <span>Project Name: </span>
-                    <input type="text" name="projectName" required>
-                </div>
-                <div class="project-desc">
-                    <span>Project Description : </span>
-                    <input type="text" name="projectDesc" required>
-                </div>
-                <button type="submit" class="create-project-button" name="addProject">Create Project</button>
-            </form>
-        </div>
-        <div class="project-display"></div>
+      <div class="okButtonDiv hidden">
+        <div class="okButtonText"></div>
+        <button class="okButton">OK</button>
+      </div>
+      <div class="nav-bar">
+        <button class="add-project">Add Project</button>
+      </div>
+      <div class="add-project-form hidden" id="addProjectForm">
+        <form id="addProjectForm" action="" method="post">
+          <div class="project-name">
+            <span>Project Name: </span>
+            <input type="text" name="projectName" required />
+          </div>
+          <div class="project-desc">
+            <span>Project Description : </span>
+            <input type="text" name="projectDesc" required />
+          </div>
+          <button type="submit" class="create-project-button" name="addProject">
+            Create Project
+          </button>
+        </form>
+      </div>
+      <div class="project-display"></div>
     </div>
-</body>
+  </body>
 </html>
