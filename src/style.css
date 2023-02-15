@@ -20,6 +20,7 @@ body{
 }
 
 .project{
+  cursor: pointer;
   background-color: antiquewhite;
   border-radius: 1rem;
   padding: 1rem;
@@ -62,7 +63,8 @@ body{
 .create-project-button,
 .okButton,
 .add-task,
-.remove-task {
+.remove-task,
+.my-projects {
   appearance: none;
   background: #4338ca;
   border: 0;
