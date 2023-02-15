@@ -17,6 +17,7 @@ addProject("First Project", "This is the first project");
 
 const projectDisplayDiv = document.querySelector(".project-display");
 const myProjectsButton = document.querySelector(".my-projects");
+const singleProjectDisplayDiv = document.querySelector(".single-project-display");
 
 
 const projectDisplayHandler = function (event) {
@@ -33,5 +34,8 @@ projectDisplayDiv.addEventListener("click", projectDisplayHandler);
 myProjectsButton.addEventListener("click", () => {
   if (projectDisplayDiv.classList.contains("hidden")) {
     projectDisplayDiv.classList.remove("hidden");
+  }
+  if(!singleProjectDisplayDiv.classList.contains("hidden")){
+    singleProjectDisplayDiv.classList.add("hidden");
   }
 });
