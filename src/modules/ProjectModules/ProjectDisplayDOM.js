@@ -7,9 +7,9 @@ const displayProjectsOnDom = () => {
   projects.forEach(project => {
     const projectDiv = document.createElement("div");
     projectDiv.classList.add("project");
-    projectDiv.innerHTML = `<div class="project-name">${project.name}</div>
-    <div class="project-desc">${project.desc}</div>
-    <div class="project-date">${project.date}</div>`;
+    projectDiv.innerHTML = `<div class="project-name small-text">${project.name}</div>
+    <div class="project-desc small-text">${project.desc}</div>
+    <div class="project-date small-text">${project.date}</div>`;
     projectDisplayDiv.appendChild(projectDiv);
     
   });

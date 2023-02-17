@@ -1,6 +1,4 @@
-import displayMessage from "./Messages";
 import addProject from "./ProjectAddProject";
-import Validations from "./Validations";
 
 const createProjectButton = document.querySelector(".create-project-button");
 const addProjectFormDiv = document.querySelector(".add-project-form");
@@ -10,16 +8,7 @@ const createProject = function (event) {
   event.preventDefault();
   const form = document.forms.addProjectForm;
   const formData = new FormData(form);
-  if (
-    Validations.validateName(formData.get("projectName")) &&
-    Validations.validateDesc(formData.get("projectDesc"))
-  ) {
-    addProject(formData.get("projectName"), formData.get("projectDesc"));
-  } else {
-    displayMessage(`Please enter valid data
-    \nName must be only letters and numbers between 1 and 50 characters
-    \nDescription must be between 1 and 180 characters`);
-  }
+  addProject(formData.get("projectName"), formData.get("projectDesc"));
   addProjectFormDiv.classList.add('hidden');
   form.reset();
 };

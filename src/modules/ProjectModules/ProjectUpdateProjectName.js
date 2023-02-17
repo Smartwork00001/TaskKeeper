@@ -1,8 +1,9 @@
-import displayMessage from "./Messages";
-import displayProjectsOnDom from "./ProjectDisplayDOM";
+import displayMessage from "../Messages";
+import displaySingleProject from "./ProjectDisplaySingleProjectDOM";
+import ProjectLocalStorage from "./ProjectLocalStorage";
 
 const updateProjectName = (name, newName) => {
-  const projects = JSON.parse(localStorage.getItem("projects"));
+  const projects = ProjectLocalStorage.getProjects();
   const index = projects.findIndex((project) => project.name === name);
   if (index === -1) {
     projects[index].name = newName;
@@ -11,10 +12,9 @@ const updateProjectName = (name, newName) => {
     return;
   }
 
-  localStorage.removeItem("projects");
-  localStorage.setItem("projects", JSON.stringify(projects));
+  ProjectLocalStorage.updateProject(projects);
   displayMessage(`Project ${name} is changed to ${newName}!`);
-  displayProjectsOnDom();
+  displaySingleProject(newName);
 };
 
 export default updateProjectName;

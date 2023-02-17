@@ -1,4 +1,4 @@
-import displayMessage from "./Messages";
+import displayMessage from "../Messages";
 import ProjectLocalStorage from "./ProjectLocalStorage";
 
 const readOneProject = (name) => {

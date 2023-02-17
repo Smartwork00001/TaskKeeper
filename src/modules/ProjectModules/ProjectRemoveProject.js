@@ -1,4 +1,4 @@
-import displayMessage from "./Messages";
+import displayMessage from "../Messages";
 import displayProjectsOnDom from "./ProjectDisplayDOM";
 import ProjectLocalStorage from "./ProjectLocalStorage";
 

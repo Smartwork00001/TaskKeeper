@@ -59,12 +59,12 @@ body{
   border-radius: 1rem;
 }
 
-.add-project,
-.create-project-button,
-.okButton,
-.add-task,
-.remove-task,
-.my-projects {
+.single-project-details{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.purple-button{
   appearance: none;
   background: #4338ca;
   border: 0;
@@ -91,4 +91,23 @@ input[type="text"] {
 
 .hidden {
   display: none;
+}
+
+.big-text{
+  font-weight: bold;
+  font-size: 5rem;
+}
+
+.medium-text{
+  font-weight: bold;
+  font-size: 2.5rem;
+}
+
+.small-text{
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.white-text{
+  color: #f8fafc;
 }
