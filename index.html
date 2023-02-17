@@ -22,7 +22,7 @@
         <button class="my-projects purple-button">My Projects</button>
         <button class="add-project purple-button">Add Project</button>
       </div>
-      <div class="add-project-form hidden" id="addProjectForm">
+      <div class="add-project-form hidden">
         <form id="addProjectForm" action="" method="post">
           <div class="project-name">
             <span>Project Name: </span>
@@ -49,14 +49,15 @@
           <div class="single-project-desc small-text"></div>
           <button class="single-project-rename purple-button">Rename</button>
           <button class="single-project-redesc purple-button">ReDescribe</button>
+          <button class="single-project-remove purple-button">Remove</button>
         </div>
       </div>
       <div class="single-project-tasks hidden">
-        <div class="nav-bar">
+        <div class="task-nav-bar">
           <button class="my-tasks purple-button">My Tasks</button>
           <button class="add-task purple-button">Add Task</button>
         </div>
-        <div class="add-task-form hidden" id="addTaskForm">
+        <div class="add-task-form hidden" >
           <form id="addTaskForm" action="" method="post">
             <div class="task-name">
               <span>Task Name: </span>
@@ -76,12 +77,12 @@
             </div>
             <div class="task-priority">
               <span>Task Priority : </span>
-              <label for="taskNotes">Low</label>
-              <input type="radio" name="taskNotes" value="low" required />
-              <label for="taskNotes">Normal</label>
-              <input type="radio" name="taskNotes" value="normal" required />
-              <label for="taskNotes">High</label>
-              <input type="radio" name="taskNotes" value="high" required />
+              <label for="taskPriorityLow">Low</label>
+              <input id="taskPriorityLow" type="radio" name="taskPriority" value="low" required />
+              <label for="taskPriorityNormal">Normal</label>
+              <input id="taskPriorityNormal" type="radio" name="taskPriority" value="normal" required />
+              <label for="taskPriorityHigh">High</label>
+              <input id="taskPriorityHigh" type="radio" name="taskPriority" value="high" required />
             </div>
             <button
               type="submit"
@@ -93,6 +94,7 @@
           </form>
         </div>
         <div class="task-display"></div>
+      </div>
       <div class="single-task-display hidden">
         <div class="single-task-details">
           <div class="single-task-name small-text"></div>
@@ -110,6 +112,5 @@
         </div>
       </div>
       </div>
-    </div>
   </body>
 </html>
