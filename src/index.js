@@ -17,6 +17,7 @@ import GlobalValues from "./modules/GlobalValues";
 import addTask from "./modules/TaskModules/TaskAddTask";
 /* end of imports for tasks */
 
+/* Start of Project JavaScript */
 localStorage.clear();
 addProject("Default Project", "This is the default project");
 addProject("First Project", "This is the first project");
@@ -36,6 +37,7 @@ const singleProjectRenameButton = document.querySelector(
 const singleProjectRedescButton = document.querySelector(
   ".single-project-redesc"
 );
+const singleProjectRemoveButton  = document.querySelector(".single-project-remove");
 
 const displaySingleProjectHandler = function (event) {
   const project = event.target.closest(".project");
@@ -80,16 +82,25 @@ const redescProjectHandler = function (event) {
   askUser("enter new desc");
 };
 
+const removeProjectHandler = function(event){
+  const project = event.target.closest(".single-project-details");
+  const projectNameDiv = project.querySelector(".single-project-name");
+  const projectName = projectNameDiv.textContent;
+  removeProject(projectName);
+}
+
 projectDisplayDiv.addEventListener("click", displaySingleProjectHandler);
 myProjectsButton.addEventListener("click", displayAllProjectsHandler);
 singleProjectRenameButton.addEventListener("click", renameProjectHandler);
 singleProjectRedescButton.addEventListener("click", redescProjectHandler);
+singleProjectRemoveButton.addEventListener('click', removeProjectHandler);
 
-/* End of projects */
+/* End of Project JavaScript */
+/* Start of tasks javascript */
 addTask("Default Project",'Task 1','Desc 1','20-2-2023','low','notes on task');
 addTask("Default Project",'Task 2','Desc 2','21-2-2023','normal','notes on task');
 addTask("Default Project",'Task 3','Desc 3','22-2-2023','high','notes on task');
-/* Start of tasks */
 
 
-/* End of tasks */ 
+
+/* End of tasks javascript */ 
