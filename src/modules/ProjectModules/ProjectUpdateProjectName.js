@@ -5,7 +5,7 @@ import ProjectLocalStorage from "./ProjectLocalStorage";
 const updateProjectName = (name, newName) => {
   const projects = ProjectLocalStorage.getProjects();
   const index = projects.findIndex((project) => project.name === name);
-  if (index === -1) {
+  if (index !== -1) {
     projects[index].name = newName;
   } else {
     displayMessage(`Project ${name} does not exist`);

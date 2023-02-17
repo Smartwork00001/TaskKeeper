@@ -1,5 +1,6 @@
 import GlobalValues from "./GlobalValues";
 import updateProjectDesc from "./ProjectModules/ProjectUpdateProjectDesc";
+import updateProjectName from "./ProjectModules/ProjectUpdateProjectName";
 
 const askUserButton = document.querySelector(".askUserButton");
 const askUserDiv = document.querySelector(".askUserDiv");
@@ -13,12 +14,14 @@ const askUser = function (message) {
 
 const removeAskUser = function () {
   askUserDiv.classList.add("hidden");
-  console.log("user entered", askUserTextArea.value);
-  if (GlobalValues.getAskUserTask() === "changeDesc") {
+  if (GlobalValues.getAskUserTask() === "changeProjectDesc") {
     updateProjectDesc(GlobalValues.getProjectName(), askUserTextArea.value);
-    GlobalValues.setAskUserTask(undefined);
+    GlobalValues.setProjectName(undefined);
+  }else if(GlobalValues.getAskUserTask() === "changeProjectName") {
+    updateProjectName(GlobalValues.getProjectName(), askUserTextArea.value);
     GlobalValues.setProjectName(undefined);
   }
+  GlobalValues.setAskUserTask(undefined);
 };
 
 askUserButton.addEventListener("click", removeAskUser);

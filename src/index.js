@@ -56,10 +56,12 @@ const displayAllProjectsHandler = function () {
 };
 
 const renameProjectHandler = function (event) {
-  const projectName = event.target.closest(".single-project-name").textContent;
-  if (projectName) {
-    updateProjectName(projectName);
-  }
+  const project = event.target.closest(".single-project-details");
+  const projectNameDiv = project.querySelector(".single-project-name");
+  const projectName = projectNameDiv.textContent;
+  GlobalValues.setProjectName(projectName);
+  GlobalValues.setAskUserTask("changeProjectName");
+  askUser("enter new name");
 };
 
 const redescProjectHandler = function (event) {
@@ -67,7 +69,7 @@ const redescProjectHandler = function (event) {
   const projectNameDiv = project.querySelector(".single-project-name");
   const projectName = projectNameDiv.textContent;
   GlobalValues.setProjectName(projectName);
-  GlobalValues.setAskUserTask("changeDesc");
+  GlobalValues.setAskUserTask("changeProjectDesc");
   askUser("enter new desc");
 };
 
