@@ -13,9 +13,16 @@ import displaySingleProject from "./modules/ProjectModules/ProjectDisplaySingleP
 import askUser from "./modules/AskUser";
 import GlobalValues from "./modules/GlobalValues";
 
+/* imports for tasks */
+import addTask from "./modules/TaskModules/TaskAddTask";
+/* end of imports for tasks */
+
 localStorage.clear();
 addProject("Default Project", "This is the default project");
 addProject("First Project", "This is the first project");
+addProject("Third Project", "This is the third project");
+addProject("Fourth Project", "This is the fourth project");
+addProject("Fifth Project", "This is the fifth project");
 
 const projectDisplayDiv = document.querySelector(".project-display");
 const myProjectsButton = document.querySelector(".my-projects");
@@ -73,11 +80,16 @@ const redescProjectHandler = function (event) {
   askUser("enter new desc");
 };
 
-/* Promises start */
-
-/* promises end */
-
 projectDisplayDiv.addEventListener("click", displaySingleProjectHandler);
 myProjectsButton.addEventListener("click", displayAllProjectsHandler);
 singleProjectRenameButton.addEventListener("click", renameProjectHandler);
 singleProjectRedescButton.addEventListener("click", redescProjectHandler);
+
+/* End of projects */
+addTask("Default Project",'Task 1','Desc 1','20-2-2023','low','notes on task');
+addTask("Default Project",'Task 2','Desc 2','21-2-2023','normal','notes on task');
+addTask("Default Project",'Task 3','Desc 3','22-2-2023','high','notes on task');
+/* Start of tasks */
+
+
+/* End of tasks */ 

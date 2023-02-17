@@ -3,6 +3,7 @@ import Project from "./ProjectClass";
 import displayProjectsOnDom from "./ProjectDisplayDOM";
 import ProjectLocalStorage from "./ProjectLocalStorage";
 import Validations from "../Validations";
+import TaskLocalStorage from "../TaskModules/TaskLocalStorage";
 
 const addProject = (name, desc) => {
   if (Validations.validateName(name) && Validations.validateDesc(desc)) {
@@ -12,6 +13,7 @@ const addProject = (name, desc) => {
       return;
     }
     projects.push(new Project(name, desc));
+    TaskLocalStorage.addProject(name);
     ProjectLocalStorage.updateProject(projects);
     displayMessage(`Project ${name} created`);
     displayProjectsOnDom();
