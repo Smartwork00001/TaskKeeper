@@ -37,7 +37,9 @@ const singleProjectRenameButton = document.querySelector(
 const singleProjectRedescButton = document.querySelector(
   ".single-project-redesc"
 );
-const singleProjectRemoveButton  = document.querySelector(".single-project-remove");
+const singleProjectRemoveButton = document.querySelector(
+  ".single-project-remove"
+);
 
 const displaySingleProjectHandler = function (event) {
   const project = event.target.closest(".project");
@@ -82,25 +84,73 @@ const redescProjectHandler = function (event) {
   askUser("enter new desc");
 };
 
-const removeProjectHandler = function(event){
+const removeProjectHandler = function (event) {
   const project = event.target.closest(".single-project-details");
   const projectNameDiv = project.querySelector(".single-project-name");
   const projectName = projectNameDiv.textContent;
   removeProject(projectName);
-}
+};
 
 projectDisplayDiv.addEventListener("click", displaySingleProjectHandler);
 myProjectsButton.addEventListener("click", displayAllProjectsHandler);
 singleProjectRenameButton.addEventListener("click", renameProjectHandler);
 singleProjectRedescButton.addEventListener("click", redescProjectHandler);
-singleProjectRemoveButton.addEventListener('click', removeProjectHandler);
+singleProjectRemoveButton.addEventListener("click", removeProjectHandler);
 
 /* End of Project JavaScript */
 /* Start of tasks javascript */
-addTask("Default Project",'Task 1','Desc 1','20-2-2023','low','notes on task');
-addTask("Default Project",'Task 2','Desc 2','21-2-2023','normal','notes on task');
-addTask("Default Project",'Task 3','Desc 3','22-2-2023','high','notes on task');
+addTask(
+  "Default Project",
+  "Task 1",
+  "Desc 1",
+  "2023-02-20",
+  "low",
+  "notes on task"
+);
+addTask(
+  "Default Project",
+  "Task 2",
+  "Desc 2",
+  "2023-2-21",
+  "normal",
+  "notes on task"
+);
+addTask(
+  "Default Project",
+  "Task 3",
+  "Desc 3",
+  "2023-2-22",
+  "high",
+  "notes on task"
+);
 
+const addTaskButton = document.querySelector(".add-task");
+const createTaskButton = document.querySelector(".create-task-button");
 
+const addTaskHandler = function () {
+  const addTaskForm = document.querySelector(".add-task-form");
+  if (addTaskForm.classList.contains("hidden")) {
+    addTaskForm.classList.remove("hidden");
+  }
+};
 
-/* End of tasks javascript */ 
+const createTaskHandler = function (event) {
+  event.preventDefault();
+  const singleProjectNameDiv = document.querySelector(".single-project-name");
+  const projectName = singleProjectNameDiv.textContent;
+
+  const form = document.forms.addTaskForm;
+  const formData = new FormData(form);
+  addTask(
+    projectName,
+    formData.get("taskName"),
+    formData.get("taskDesc"),
+    formData.get("taskDue"),
+    formData.get("taskPriority"),
+    formData.get("taskNotes")
+  );
+};
+
+addTaskButton.addEventListener("click", addTaskHandler);
+createTaskButton.addEventListener("click", createTaskHandler);
+/* End of tasks javascript */
