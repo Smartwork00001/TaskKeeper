@@ -51,7 +51,65 @@
           <button class="single-project-redesc purple-button">ReDescribe</button>
         </div>
       </div>
-      <div class="single-project-tasks hidden">TASKA</div>
+      <div class="single-project-tasks hidden">
+        <div class="nav-bar">
+          <button class="my-tasks purple-button">My Tasks</button>
+          <button class="add-task purple-button">Add Task</button>
+        </div>
+        <div class="add-task-form hidden" id="addTaskForm">
+          <form id="addTaskForm" action="" method="post">
+            <div class="task-name">
+              <span>Task Name: </span>
+              <input type="text" name="taskName" required />
+            </div>
+            <div class="task-desc">
+              <span>Task Description : </span>
+              <input type="text" name="taskDesc" required />
+            </div>
+            <div class="task-due">
+              <span>Task Due : </span>
+              <input type="date" name="taskDue" required />
+            </div>
+            <div class="task-notes">
+              <span>Task Notes : </span>
+              <input type="text" name="taskNotes" required />
+            </div>
+            <div class="task-priority">
+              <span>Task Priority : </span>
+              <label for="taskNotes">Low</label>
+              <input type="radio" name="taskNotes" value="low" required />
+              <label for="taskNotes">Normal</label>
+              <input type="radio" name="taskNotes" value="normal" required />
+              <label for="taskNotes">High</label>
+              <input type="radio" name="taskNotes" value="high" required />
+            </div>
+            <button
+              type="submit"
+              class="create-task-button purple-button"
+              name="addTask"
+            >
+              Create Task
+            </button>
+          </form>
+        </div>
+        <div class="task-display"></div>
+      <div class="single-task-display hidden">
+        <div class="single-task-details">
+          <div class="single-task-name small-text"></div>
+          <div class="single-task-date small-text"></div>
+          <div class="single-task-due small-text"></div>
+          <div class="single-task-priority small-text"></div>
+          <div class="single-task-notes small-text"></div>
+          <div class="single-task-status small-text"></div>
+          <button class="single-task-rename purple-button">Rename</button>
+          <button class="single-task-redesc purple-button">ReDescribe</button>
+          <button class="single-task-renotes purple-button">Renotes</button>
+          <button class="single-task-redue purple-button">ReDue</button>
+          <button class="single-task-repriority purple-button">RePriority</button>
+          <button class="single-task-restatus purple-button">ReStatus</button>
+        </div>
+      </div>
+      </div>
     </div>
   </body>
 </html>
