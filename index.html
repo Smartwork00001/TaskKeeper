@@ -10,12 +10,17 @@
   <body>
     <div class="content">
       <div class="okButtonDiv hidden">
-        <div class="okButtonText"></div>
-        <button class="okButton">OK</button>
+        <div class="okButtonText small-text"></div>
+        <button class="okButton purple-button">OK</button>
+      </div>
+      <div class="askUserDiv hidden">
+        <div class="askUserText small-text"></div>
+        <textarea class="askUserTextArea" name="askUserTextArea" id="askUserTextArea" cols="30" rows="10"></textarea>
+        <button class="askUserButton purple-button">OK</button>
       </div>
       <div class="nav-bar">
-        <button class="my-projects">My Projects</button>
-        <button class="add-project">Add Project</button>
+        <button class="my-projects purple-button">My Projects</button>
+        <button class="add-project purple-button">Add Project</button>
       </div>
       <div class="add-project-form hidden" id="addProjectForm">
         <form id="addProjectForm" action="" method="post">
@@ -27,13 +32,26 @@
             <span>Project Description : </span>
             <input type="text" name="projectDesc" required />
           </div>
-          <button type="submit" class="create-project-button" name="addProject">
+          <button
+            type="submit"
+            class="create-project-button purple-button"
+            name="addProject"
+          >
             Create Project
           </button>
         </form>
       </div>
       <div class="project-display"></div>
-      <div class="single-project-display hidden"></div>
+      <div class="single-project-display hidden">
+        <div class="single-project-details">
+          <div class="single-project-name small-text"></div>
+          <div class="single-project-date small-text"></div>
+          <div class="single-project-desc small-text"></div>
+          <button class="single-project-rename purple-button">Rename</button>
+          <button class="single-project-redesc purple-button">ReDescribe</button>
+        </div>
+      </div>
+      <div class="single-project-tasks hidden">TASKA</div>
     </div>
   </body>
 </html>
