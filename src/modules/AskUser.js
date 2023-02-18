@@ -3,6 +3,10 @@ import updateProjectDesc from "./ProjectModules/ProjectUpdateProjectDesc";
 import updateProjectName from "./ProjectModules/ProjectUpdateProjectName";
 import updateTaskName from "./TaskModules/TaskUpdateTaskName";
 import updateTaskDesc from "./TaskModules/TaskUpdateTaskDesc";
+import updateTaskDue from "./TaskModules/TaskUpdateDue";
+import updateTaskNotes from "./TaskModules/TaskUpdateNotes";
+import updateTaskPriority from "./TaskModules/TaskUpdatePriority";
+import updateTaskStatus from "./TaskModules/TaskUpdateStatus";
 
 const askUserButton = document.querySelector(".askUserButton");
 const askUserDiv = document.querySelector(".askUserDiv");
@@ -28,6 +32,30 @@ const removeAskUser = function () {
     );
   } else if (GlobalValues.getAskUserTask() === "changeTaskDesc") {
     updateTaskDesc(
+      GlobalValues.getProjectName(),
+      GlobalValues.getTaskName(),
+      askUserTextArea.value
+    );
+  } else if (GlobalValues.getAskUserTask() === "changeTaskDue") {
+    updateTaskDue(
+      GlobalValues.getProjectName(),
+      GlobalValues.getTaskName(),
+      askUserTextArea.value
+    );
+  } else if (GlobalValues.getAskUserTask() === "changeTaskNotes") {
+    updateTaskNotes(
+      GlobalValues.getProjectName(),
+      GlobalValues.getTaskName(),
+      askUserTextArea.value
+    );
+  } else if (GlobalValues.getAskUserTask() === "changeTaskPriority") {
+    updateTaskPriority(
+      GlobalValues.getProjectName(),
+      GlobalValues.getTaskName(),
+      askUserTextArea.value
+    );
+  }else if (GlobalValues.getAskUserTask() === "changeTaskStatus") {
+    updateTaskStatus(
       GlobalValues.getProjectName(),
       GlobalValues.getTaskName(),
       askUserTextArea.value

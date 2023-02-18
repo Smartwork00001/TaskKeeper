@@ -3,11 +3,11 @@ import Validations from '../Validations';
 import displaySingleTaskDOM from './TaskDisplaySingleTaskDOM';
 import TaskLocalStorage from './TaskLocalStorage';
 
-const updateTaskDesc = (projectName,taskName, desc) => {
-   if(Validations.validateDate(desc)){
+const updateTaskPriority = (projectName,taskName, priority) => {
+   if(Validations.validateNotes(priority)){
     const tasks = TaskLocalStorage.getTask(projectName);
     const task = tasks.find(task2 => task2.name === taskName);
-    task.desc = desc;
+    task.priority = priority;
     TaskLocalStorage.updateTask(projectName,tasks);
     displaySingleTaskDOM(projectName,taskName);
    }else{
@@ -15,4 +15,4 @@ const updateTaskDesc = (projectName,taskName, desc) => {
    }
 }
 
-export default updateTaskDesc;
+export default updateTaskPriority;

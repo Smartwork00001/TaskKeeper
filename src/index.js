@@ -197,13 +197,29 @@ const taskRedescHandler = function () {
   askUser("enter new task desc");
 };
 
-const taskRedueHandler = function () {};
+const taskRedueHandler = function () {
+  commonTaskHandler();
+  GlobalValues.setAskUserTask("changeTaskDue");
+  askUser("enter new task due");
+};
 
-const taskRenotesHandler = function () {};
+const taskRenotesHandler = function () {
+  commonTaskHandler();
+  GlobalValues.setAskUserTask("changeTaskNotes");
+  askUser("enter new task notes");
+};
 
-const taskRepriorityHandler = function () {};
+const taskRepriorityHandler = function () {
+  commonTaskHandler();
+  GlobalValues.setAskUserTask("changeTaskPriority");
+  askUser("enter new task priority");
+};
 
-const taskRestatusHandler = function () {};
+const taskRestatusHandler = function () {
+  commonTaskHandler();
+  GlobalValues.setAskUserTask("changeTaskStatus");
+  askUser("enter new task status");
+};
 
 addTaskButton.addEventListener("click", addTaskHandler);
 createTaskButton.addEventListener("click", createTaskHandler);
