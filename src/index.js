@@ -122,8 +122,18 @@ addTask(
 const addTaskButton = document.querySelector(".add-task");
 const createTaskButton = document.querySelector(".create-task-button");
 const myTasksButton = document.querySelector(".my-tasks");
-const tasksDisplayDiv = document.querySelector('.tasks-display');
-const singleTaskDisplayDiv = document.querySelector('.single-task-display');
+const tasksDisplayDiv = document.querySelector(".tasks-display");
+const singleTaskDisplayDiv = document.querySelector(".single-task-display");
+const singleTaskRenameButton = document.querySelector(".single-task-rename");
+const singleTaskRedescButton = document.querySelector(".single-task-redesc");
+const singleTaskRenotesButton = document.querySelector(".single-task-renotes");
+const singleTaskRedueButton = document.querySelector(".single-task-redue");
+const singleTaskRepriorityButton = document.querySelector(
+  ".single-task-repriority"
+);
+const singleTaskRestatusButton = document.querySelector(
+  ".single-task-restatus"
+);
 
 const addTaskHandler = function () {
   const addTaskForm = document.querySelector(".add-task-form");
@@ -148,26 +158,53 @@ const createTaskHandler = function (event) {
     formData.get("taskNotes")
   );
   form.reset();
-  const addTaskFormDiv = document.querySelector('.add-task-form');
-  if(!addTaskFormDiv.classList.contains("hidden")){
+  const addTaskFormDiv = document.querySelector(".add-task-form");
+  if (!addTaskFormDiv.classList.contains("hidden")) {
     addTaskFormDiv.classList.add("hidden");
   }
 };
 
-const displayAllTasksHandler = function(){
+const displayAllTasksHandler = function () {
   displayAllTasksDOM();
-}
+};
 
-const tasksDisplayHandler = function(event){
+const tasksDisplayHandler = function (event) {
   const task = event.target.closest(".task");
-  if(task){
-    displaySingleTaskDOM(task.querySelector('.display-task-project').textContent,
-    task.querySelector('.display-task-name').textContent);
+  if (task) {
+    displaySingleTaskDOM(
+      task.querySelector(".display-task-project").textContent,
+      task.querySelector(".display-task-name").textContent
+    );
   }
-}
+};
+
+const taskRenameHandler = function () {
+  const singleTaskProjectDiv = document.querySelector(".single-task-project");
+  const singleTaskNameDiv = document.querySelector(".single-task-name");
+  GlobalValues.setAskUserTask("changeTaskName");
+  GlobalValues.setTaskName(singleTaskNameDiv.textContent);
+  GlobalValues.setProjectName(singleTaskProjectDiv.textContent);
+  askUser("enter new task name");
+};
+
+const taskRedescHandler = function () {};
+
+const taskRedueHandler = function () {};
+
+const taskRenotesHandler = function () {};
+
+const taskRepriorityHandler = function () {};
+
+const taskRestatusHandler = function () {};
 
 addTaskButton.addEventListener("click", addTaskHandler);
 createTaskButton.addEventListener("click", createTaskHandler);
-myTasksButton.addEventListener('click',displayAllTasksHandler);
-tasksDisplayDiv.addEventListener('click',tasksDisplayHandler);
+myTasksButton.addEventListener("click", displayAllTasksHandler);
+tasksDisplayDiv.addEventListener("click", tasksDisplayHandler);
+singleTaskRenameButton.addEventListener("click", taskRenameHandler);
+singleTaskRedescButton.addEventListener("click", taskRedescHandler);
+singleTaskRedueButton.addEventListener("click", taskRedueHandler);
+singleTaskRenotesButton.addEventListener("click", taskRenotesHandler);
+singleTaskRepriorityButton.addEventListener("click", taskRepriorityHandler);
+singleTaskRestatusButton.addEventListener("click", taskRestatusHandler);
 /* End of tasks javascript */

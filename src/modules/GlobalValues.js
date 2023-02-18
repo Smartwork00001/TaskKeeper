@@ -5,6 +5,7 @@ class GlobalValues{
         this.askUserName = false;
         this.projectName = undefined;
         this.projectDesc = undefined;
+        this.taskName = undefined;
     }
 
     static getAskUserTask(){
@@ -45,6 +46,14 @@ class GlobalValues{
 
     static setProjectDesc(projectDesc){
         this.projectDesc = projectDesc;
+    }
+
+    static getTaskName(){
+        return this.taskName;
+    }
+
+    static setTaskName(name){
+        this.taskName = name;
     }
 }
 
