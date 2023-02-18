@@ -1,5 +1,6 @@
 import isValid from "date-fns/isValid";
 import ProjectLocalStorage from "./ProjectModules/ProjectLocalStorage";
+import TaskLocalStorage from "./TaskModules/TaskLocalStorage";
 
 class Validations {
   static validateDate(date) {
@@ -50,6 +51,15 @@ class Validations {
       return true;
     }
     return false;
+  }
+
+  static validateTask(project,name){
+    const tasks = TaskLocalStorage.getTask(project);
+    const index = tasks.findIndex(task => task.name === name);
+    if(index === -1){
+      return false;
+    }
+    return true;
   }
 }
 

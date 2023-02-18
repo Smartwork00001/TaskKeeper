@@ -15,6 +15,7 @@ import GlobalValues from "./modules/GlobalValues";
 
 /* imports for tasks */
 import addTask from "./modules/TaskModules/TaskAddTask";
+import displayAllTasksDOM from "./modules/TaskModules/TaskDisplayDOM";
 /* end of imports for tasks */
 
 /* Start of Project JavaScript */
@@ -51,19 +52,12 @@ const displaySingleProjectHandler = function (event) {
       singleProjectTasksDiv.classList.remove("hidden");
     }
     displaySingleProject(project.querySelector(".project-name").textContent);
+    displayAllTasksDOM();
   }
 };
 
 const displayAllProjectsHandler = function () {
-  if (projectDisplayDiv.classList.contains("hidden")) {
-    projectDisplayDiv.classList.remove("hidden");
-  }
-  if (!singleProjectTasksDiv.classList.contains("hidden")) {
-    singleProjectTasksDiv.classList.add("hidden");
-  }
-  if (!singleProjectDisplayDiv.classList.contains("hidden")) {
-    singleProjectDisplayDiv.classList.add("hidden");
-  }
+  displayProjectsOnDom();
 };
 
 const renameProjectHandler = function (event) {
@@ -126,6 +120,9 @@ addTask(
 
 const addTaskButton = document.querySelector(".add-task");
 const createTaskButton = document.querySelector(".create-task-button");
+const myTasksButton = document.querySelector(".my-tasks");
+const tasksDisplayDiv = document.querySelector('.tasks-display');
+const singleTaskDisplayDiv = document.querySelector('.single-task-display');
 
 const addTaskHandler = function () {
   const addTaskForm = document.querySelector(".add-task-form");
@@ -151,6 +148,11 @@ const createTaskHandler = function (event) {
   );
 };
 
+const displayAllTasksHandler = function(){
+  displayAllTasksDOM();
+}
+
 addTaskButton.addEventListener("click", addTaskHandler);
 createTaskButton.addEventListener("click", createTaskHandler);
+myTasksButton.addEventListener('click',displayAllTasksHandler)
 /* End of tasks javascript */

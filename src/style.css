@@ -12,14 +12,14 @@ body{
   flex-direction: column;
 }
 
-.project-display{
+.project-display, .tasks-display{
   display: flex;
   flex-wrap: wrap;
   gap:1rem;
   padding: 1rem;
 }
 
-.project{
+.project, .task{
   cursor: pointer;
   background-color: antiquewhite;
   border-radius: 1rem;
