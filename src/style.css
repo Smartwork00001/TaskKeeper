@@ -19,6 +19,12 @@ body{
   padding: 1rem;
 }
 
+.project-display {
+  background-color: #cbd5e1;
+  margin-bottom: auto;
+  flex:1;
+}
+
 .project, .task{
   cursor: pointer;
   background-color: antiquewhite;
@@ -29,8 +35,9 @@ body{
   flex: auto;
 }
 
-.nav-bar{
+.nav-bar, .task-nav-bar{
   padding:1rem;
+  background-color: #1e293b ;
 }
 
 .okButtonDiv {
@@ -61,7 +68,27 @@ body{
 
 .single-project-details{
   display: flex;
+  flex-direction: column;
   justify-content: space-evenly;
+  gap: 1rem;
+  background-color: #fef9c3;
+}
+
+.single-project-details-wrapper,
+.single-task-details-wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding:0.2rem 2rem;
+  align-items: center;
+
+}
+
+.single-project-tasks{
+  background-color: #fde047;
+}
+
+.single-task-display{
+  background-color: #fde047;
 }
 
 .purple-button{

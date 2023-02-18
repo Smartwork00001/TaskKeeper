@@ -6,6 +6,7 @@ const displayAllTasksDOM = () => {
   const tasksDisplayDiv = document.querySelector(".tasks-display");
   const singleProjectNameDiv = document.querySelector(".single-project-name");
   const projectName = singleProjectNameDiv.textContent;
+  console.log(projectName);
   if (projectName) {
     if (!singleTaskDisplayDiv.classList.contains("hidden")) {
       singleTaskDisplayDiv.classList.add("hidden");
@@ -13,8 +14,12 @@ const displayAllTasksDOM = () => {
     if (singleProjectTasksDiv.classList.contains("hidden")) {
       singleProjectTasksDiv.classList.remove("hidden");
     }
+    if(tasksDisplayDiv.classList.contains("hidden")){
+      tasksDisplayDiv.classList.remove("hidden");
+    }
     tasksDisplayDiv.innerHTML = "";
     const tasks = TaskLocalStorage.getTask(projectName);
+    console.log(tasks);
     tasks.forEach((task) => {
       const singleTaskDiv = document.createElement("div");
       singleTaskDiv.classList.add("task");
