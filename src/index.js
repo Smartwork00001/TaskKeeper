@@ -16,6 +16,7 @@ import GlobalValues from "./modules/GlobalValues";
 /* imports for tasks */
 import addTask from "./modules/TaskModules/TaskAddTask";
 import displayAllTasksDOM from "./modules/TaskModules/TaskDisplayDOM";
+import displaySingleTaskDOM from "./modules/TaskModules/TaskDisplaySingleTaskDOM";
 /* end of imports for tasks */
 
 /* Start of Project JavaScript */
@@ -146,13 +147,27 @@ const createTaskHandler = function (event) {
     formData.get("taskPriority"),
     formData.get("taskNotes")
   );
+  form.reset();
+  const addTaskFormDiv = document.querySelector('.add-task-form');
+  if(!addTaskFormDiv.classList.contains("hidden")){
+    addTaskFormDiv.classList.add("hidden");
+  }
 };
 
 const displayAllTasksHandler = function(){
   displayAllTasksDOM();
 }
 
+const tasksDisplayHandler = function(event){
+  const task = event.target.closest(".task");
+  if(task){
+    displaySingleTaskDOM(task.querySelector('.display-task-project').textContent,
+    task.querySelector('.display-task-name').textContent);
+  }
+}
+
 addTaskButton.addEventListener("click", addTaskHandler);
 createTaskButton.addEventListener("click", createTaskHandler);
-myTasksButton.addEventListener('click',displayAllTasksHandler)
+myTasksButton.addEventListener('click',displayAllTasksHandler);
+tasksDisplayDiv.addEventListener('click',tasksDisplayHandler);
 /* End of tasks javascript */

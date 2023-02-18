@@ -18,7 +18,9 @@ const displayAllTasksDOM = () => {
     tasks.forEach((task) => {
       const singleTaskDiv = document.createElement("div");
       singleTaskDiv.classList.add("task");
-      singleTaskDiv.innerHTML = `<div class="display-task-name">${task.name}</div>
+      singleTaskDiv.innerHTML = `
+      <div class="display-task-project hidden">${task.project}</div>
+      <div class="display-task-name">${task.name}</div>
       <div class="display-task-date">${task.date}</div>
       <div class="display-task-due">${task.due}</div>
       <div class="display-task-priority">${task.priority}</div>

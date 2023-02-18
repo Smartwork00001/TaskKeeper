@@ -16,6 +16,7 @@ const addTask = (project, name, desc, due, priority, notes) => {
         tasks.push(task);
         TaskLocalStorage.updateTask(project, tasks);
         displayAllTasksDOM();
+        displayMessage(`Task ${name} is created!`);
     }else{
         displayMessage('Details not valid!');
     }

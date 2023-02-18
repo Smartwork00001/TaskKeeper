@@ -15,6 +15,10 @@ class TaskLocalStorage{
     static removeProject(name){
         localStorage.removeItem(name);
     }
+
+    static getSingleTask(project,name){
+        return (this.getTask(project)).find(task => task.name === name);
+    }
 }
 
 export default TaskLocalStorage;
