@@ -178,16 +178,24 @@ const tasksDisplayHandler = function (event) {
   }
 };
 
-const taskRenameHandler = function () {
+const commonTaskHandler = function(){
   const singleTaskProjectDiv = document.querySelector(".single-task-project");
   const singleTaskNameDiv = document.querySelector(".single-task-name");
-  GlobalValues.setAskUserTask("changeTaskName");
   GlobalValues.setTaskName(singleTaskNameDiv.textContent);
   GlobalValues.setProjectName(singleTaskProjectDiv.textContent);
+}
+
+const taskRenameHandler = function () {
+  commonTaskHandler();
+  GlobalValues.setAskUserTask("changeTaskName");
   askUser("enter new task name");
 };
 
-const taskRedescHandler = function () {};
+const taskRedescHandler = function () {
+  commonTaskHandler();
+  GlobalValues.setAskUserTask("changeTaskDesc");
+  askUser("enter new task desc");
+};
 
 const taskRedueHandler = function () {};
 

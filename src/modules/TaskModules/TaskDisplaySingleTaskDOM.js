@@ -11,6 +11,7 @@ const displaySingleTaskDOM = (project,name) => {
     }
     const singleTaskProjectDiv = document.querySelector('.single-task-project');
     const singleTaskNameDiv = document.querySelector('.single-task-name');
+    const singleTaskDescDiv = document.querySelector('.single-task-desc');
     const singleTaskDateDiv = document.querySelector('.single-task-date');
     const singleTaskDueDiv = document.querySelector('.single-task-due');
     const singleTaskPriorityDiv = document.querySelector('.single-task-priority');
@@ -20,6 +21,7 @@ const displaySingleTaskDOM = (project,name) => {
     const task = TaskLocalStorage.getSingleTask(project,name);
     singleTaskProjectDiv.textContent = task.project;
     singleTaskNameDiv.textContent = task.name;
+    singleTaskDescDiv.textContent = task.desc;
     singleTaskDueDiv.textContent = task.due;
     singleTaskDateDiv.textContent = task.date;
     singleTaskPriorityDiv.textContent = task.priority;
