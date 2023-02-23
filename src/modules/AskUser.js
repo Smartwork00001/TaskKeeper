@@ -15,6 +15,7 @@ const askUserTextArea = document.querySelector(".askUserTextArea");
 
 const askUser = function (message) {
   askUserText.textContent = message;
+  askUserTextArea.value = "";
   askUserDiv.classList.remove("hidden");
 };
 

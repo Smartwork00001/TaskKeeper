@@ -4,7 +4,7 @@ import displaySingleTaskDOM from './TaskDisplaySingleTaskDOM';
 import TaskLocalStorage from './TaskLocalStorage';
 
 const updateTaskDesc = (projectName,taskName, desc) => {
-   if(Validations.validateDate(desc)){
+   if(Validations.validateDesc(desc)){
     const tasks = TaskLocalStorage.getTask(projectName);
     const task = tasks.find(task2 => task2.name === taskName);
     task.desc = desc;
