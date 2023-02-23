@@ -83,12 +83,12 @@
             </div>
             <div class="task-priority">
               <span>Task Priority : </span>
-              <label for="taskPriorityLow">Low</label>
               <input id="taskPriorityLow" type="radio" name="taskPriority" value="low" required />
-              <label for="taskPriorityNormal">Normal</label>
+              <label for="taskPriorityLow">Low</label>
               <input id="taskPriorityNormal" type="radio" name="taskPriority" value="normal" required />
-              <label for="taskPriorityHigh">High</label>
+              <label for="taskPriorityNormal">Normal</label>
               <input id="taskPriorityHigh" type="radio" name="taskPriority" value="high" required />
+              <label for="taskPriorityHigh">High</label>
             </div>
             <button
               type="submit"
@@ -105,31 +105,39 @@
         <div class="single-task-details">
           <div class="single-task-project hidden small-text"></div>
           <div class="single-task-details-wrapper">
-            <div class="single-task-name small-text"></div>
-            <button class="single-task-rename purple-button">Rename</button>
+            <div class="left">Name</div>
+            <div class="single-task-name center small-text"></div>
+            <button class="single-task-rename right purple-button">Rename</button>
           </div>
           <div class="single-task-details-wrapper">
-            <div class="single-task-desc small-text"></div>
-            <button class="single-task-redesc purple-button">ReDescribe</button>
+            <div class="left">Description</div>
+            <div class="single-task-desc center small-text"></div>
+            <button class="single-task-redesc right purple-button">ReDescribe</button>
           </div>
           <div class="single-task-details-wrapper">
-            <div class="single-task-date small-text"></div>
+            <div class="left">Created on</div>
+            <div class="single-task-date center small-text"></div>
+            <div class="dummy"></div>
           </div>
           <div class="single-task-details-wrapper">
-            <div class="single-task-due small-text"></div>
-            <button class="single-task-redue purple-button">ReDue</button>
+            <div class="left">Due date</div>
+            <div class="single-task-due center small-text"></div>
+            <button class="single-task-redue right purple-button">ReDue</button>
           </div>
           <div class="single-task-details-wrapper">
-            <div class="single-task-priority small-text"></div>
-            <button class="single-task-repriority purple-button">RePriority</button>
+            <div class="left">Priority</div>
+            <div class="single-task-priority center small-text"></div>
+            <button class="single-task-repriority right purple-button">RePriority</button>
           </div>
           <div class="single-task-details-wrapper">
-            <div class="single-task-notes small-text"></div>
-            <button class="single-task-renotes purple-button">Renotes</button>
+            <div class="left">Notes</div>
+            <div class="single-task-notes center small-text"></div>
+            <button class="single-task-renotes right purple-button">Renotes</button>
           </div>
           <div class="single-task-details-wrapper">
-            <div class="single-task-status small-text"></div>
-            <button class="single-task-restatus purple-button">ReStatus</button>
+            <div class="left">Status</div>
+            <div class="single-task-status center small-text"></div>
+            <button class="single-task-restatus right purple-button">ReStatus</button>
           </div>
         </div>
       </div>
