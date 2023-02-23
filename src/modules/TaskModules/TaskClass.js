@@ -2,7 +2,7 @@ class Task {
   constructor(project, name, desc, due, priority, notes) {
     this.project = project;
     const today = new Date();
-    this.date = `${today.getDate()}-${today.getMonth()+1}-${today.getFullYear()}`;
+    this.date = `${today.getFullYear()}-${today.getMonth()+1}-${today.getDate()}`;
     this.name = name;
     this.desc = desc;
     this.due = due;
